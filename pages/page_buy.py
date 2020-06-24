@@ -1,6 +1,6 @@
 class PageBuy:
-    def __init__(self, my_driver):
-        self.driver = my_driver
+    def __init__(self, driver):
+        self.driver = driver
         self.quantity_wanted = 'quantity_wanted'
         self.button_plus = '//*[@id="quantity_wanted_p"]/a[2]/span/i'
 
