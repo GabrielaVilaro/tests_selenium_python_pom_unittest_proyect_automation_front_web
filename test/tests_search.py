@@ -20,12 +20,12 @@ class SearchCases(unittest.TestCase):
         self.indexPage.search('Celular')
         self.assertEqual(self.itemPage.get_text(), 'No results were found for your search "Celular"')
 
-    @unittest.skip
+
     def test_search_element_valid(self):
         self.indexPage.search('Dress')
         self.assertTrue('DRESS' in self.itemPage.return_section_title())
 
-    @unittest.skip
+
     def test_search_element_valid_two(self):
         self.indexPage.search('T-Shirt')
         self.assertTrue('T-SHIRT' in self.itemPage.return_section_title())

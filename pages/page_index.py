@@ -9,6 +9,7 @@ class PageIndex:
         #ejemplo de como usar la librería BY
         self.query_top = (By.ID, 'search_query_top')
         self.button_search = (By.NAME, 'submit_search')
+        self.button_sign_in = (By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/div[1]/a')
         self.driver = driver
 
     def search(self, item):
@@ -22,3 +23,6 @@ class PageIndex:
         except:
             print("No se encuentra el elemento")
 
+    def push_sign_in(self):
+        button_sign_in = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_sign_in))
+        button_sign_in.click()

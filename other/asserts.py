@@ -67,8 +67,8 @@ class TestGeneral(unittest.TestCase):
         self.assertTupleEqual(a, b)
 
     def test_assert_dictionary(self):
-        a = {"id": 1, "account": 12345, "user": "user1"}
-        b = {"id": 1, "account": 12345, "user": "user1"}
+        a = {"id": 1, "page_account": 12345, "user": "user1"}
+        b = {"id": 1, "page_account": 12345, "user": "user1"}
         #compara dos diccionarios
         self.assertDictEqual(a, b)
 
