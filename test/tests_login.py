@@ -1,5 +1,4 @@
 import string
-import time
 import unittest
 import random
 from selenium import webdriver
@@ -8,7 +7,8 @@ from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
 from pages.page_sign_in import PageLogin
 from pages.page_create_an_account import PageCreateAccount
-from pages.page_sing_up import PageSingUp
+from pages.page_my_account import PageMyAccount
+
 
 class SearchCases(unittest.TestCase):
     # Método con pre-condiciones
@@ -23,12 +23,14 @@ class SearchCases(unittest.TestCase):
         self.buyPage = PageBuy(self.driver)
         self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
-        self.signUp = PageSingUp(self.driver)
-        #función que genera un email random
-        def generate_email(prefix='huks214+', domain='gmail.com'):
+        self.myAccount = PageMyAccount(self.driver)
+
+        # función que genera un email random
+        def generate_email(prefix='test123+', domain='gmail.com'):
             random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
                                   for _ in range(10))
             return prefix + random_part + '@' + domain
+
         self.email = generate_email()
 
     def test_title_of_page(self):
@@ -37,7 +39,7 @@ class SearchCases(unittest.TestCase):
         self.login.push_create_an_account()
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
-    def test_sign_in_complete_verify_name_of_user(self):
+    def test_sign_in_complete_verify_name_of_user_and_title_banner_my_account(self):
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.email)
         self.login.push_create_an_account()
@@ -55,12 +57,12 @@ class SearchCases(unittest.TestCase):
         self.createdAccount.number_phone_mobile_and_home_phone('111111111', '000000000')
         self.createdAccount.sender_address_aditional_alias('This is my address!')
         self.createdAccount.click_button_register()
-        name_user_register = self.signUp.return_text_user_register()
+        name_user_register = self.myAccount.return_text_user_register()
+        title_register_sussefuly = self.myAccount.return_text_of_banner()
         self.assertEqual('Lorena Pérez', name_user_register)
+        self.assertTrue('MY ACCOUNT' in title_register_sussefuly)
 
-    #Método con las post-condiciones
+    # Método con las post-condiciones
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
-
-

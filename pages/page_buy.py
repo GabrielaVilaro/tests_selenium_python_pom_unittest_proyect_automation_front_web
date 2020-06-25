@@ -7,6 +7,8 @@ class PageBuy:
         self.driver = driver
         self.quantity_wanted = (By.NAME, 'qty')
         self.button_plus = (By.XPATH, '//*[@id="quantity_wanted_p"]/a[2]/span/i')
+        self.button_add_to_cart = (By.XPATH, '//*[@id="add_to_cart"]/button/span')
+        self.successfully_add_product_text = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
 
     def push_quantity(self, quantity):
         try:
@@ -27,3 +29,13 @@ class PageBuy:
         get_number_elements = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.quantity_wanted))
         get_number = get_number_elements.get_attribute('value')
         return get_number
+
+    def push_add_to_cart(self):
+        add_to_cart = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.button_add_to_cart))
+        add_to_cart.click()
+
+    def get_text_successfully_add_product_text(self):
+        text_add_product = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.successfully_add_product_text))
+        text_add = text_add_product.text
+        return text_add
+

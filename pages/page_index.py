@@ -10,6 +10,7 @@ class PageIndex:
         self.query_top = (By.ID, 'search_query_top')
         self.button_search = (By.NAME, 'submit_search')
         self.button_sign_in = (By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/div[1]/a')
+        self.phone_numbre_of_banner = (By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/span/strong')
         self.driver = driver
 
     def search(self, item):
@@ -26,3 +27,8 @@ class PageIndex:
     def push_sign_in(self):
         button_sign_in = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_sign_in))
         button_sign_in.click()
+
+    def return_phone_number_of_banner(self):
+        phone_number = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.phone_numbre_of_banner))
+        number = phone_number.text
+        return number

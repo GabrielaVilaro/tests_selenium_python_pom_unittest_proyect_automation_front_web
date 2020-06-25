@@ -44,6 +44,11 @@ class SearchCases(unittest.TestCase):
         self.resultPage.product_list_by_value('reference:desc')
         self.resultPage.product_list_by_index(3)
 
+    def test_check_phone_number(self):
+        phone_number = self.indexPage.return_phone_number_of_banner()
+        self.assertEqual(phone_number, '0123-456-789')
+
+
     #Método con las post-condiciones
     def tearDown(self):
         self.driver.close()

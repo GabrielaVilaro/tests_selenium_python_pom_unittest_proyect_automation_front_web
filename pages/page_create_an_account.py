@@ -107,11 +107,12 @@ class PageCreateAccount:
         item.select_by_value(value)
 
     def complete_additional_information(self, text):
-        complete_information = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.additional_information_box))
+        complete_information = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.additional_information_box))
         complete_information.send_keys(text)
 
     def number_phone_mobile_and_home_phone(self, mobile, phone):
-        phone_mobile =  WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.mobile_phone_box))
+        phone_mobile = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.mobile_phone_box))
         phone_mobile.send_keys(mobile)
         phone_home = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.home_phone_box))
         phone_home.send_keys(phone)
