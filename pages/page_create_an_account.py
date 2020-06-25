@@ -82,16 +82,6 @@ class PageCreateAccount:
             EC.presence_of_element_located(self.select_checkbox))
         push_check_button.click()
 
-    def return_first_name_box_address_tex(self):
-        text_of_box = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.first_name_box))
-        text = text_of_box.text
-        return text
-
-    def return_last_name_box_address_tex(self):
-        text_of_box = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.last_name_box))
-        text = text_of_box.text
-        return text
-
     def sender_company_address_and_city(self, company, address, city):
         sender_company = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.company_name_box))
         sender_company.send_keys(company)
