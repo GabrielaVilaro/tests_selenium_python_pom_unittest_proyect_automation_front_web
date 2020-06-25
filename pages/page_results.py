@@ -33,14 +33,20 @@ class ResultCases:
             print('No se encuentra el elemento.')
 
     def product_list_by_select(self, text):
-        order = Select(self.driver.find_element(self.select_product))
+        wait = WebDriverWait(self.driver, 10)
+        order = wait.until(EC.presence_of_element_located(self.select_product))
+        order = Select(order)
         order.select_by_visible_text(text)
 
     def product_list_by_value(self, value):
-        order = Select(self.driver.find_element(self.select_product))
+        wait = WebDriverWait(self.driver, 10)
+        order = wait.until(EC.presence_of_element_located(self.select_product))
+        order = Select(order)
         order.select_by_value(value)
 
     def product_list_by_index(self, number):
-        order = Select(self.driver.find_element(self.select_product))
+        wait = WebDriverWait(self.driver, 10)
+        order = wait.until(EC.presence_of_element_located(self.select_product))
+        order = Select(order)
         order.select_by_index(number)
 
