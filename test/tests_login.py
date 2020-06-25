@@ -1,5 +1,4 @@
 import string
-import time
 import unittest
 import random
 from selenium import webdriver
@@ -28,7 +27,6 @@ class SearchCases(unittest.TestCase):
             random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
                                   for _ in range(10))
             return prefix + random_part + '@' + domain
-
         self.email = generate_email()
 
     def test_email_adress(self):
