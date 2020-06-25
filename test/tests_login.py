@@ -23,7 +23,7 @@ class SearchCases(unittest.TestCase):
         self.buyPage = PageBuy(self.driver)
         self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
-
+        #función que genera un email random
         def generate_email(prefix='huks214+', domain='gmail.com'):
             random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
                                   for _ in range(10))
