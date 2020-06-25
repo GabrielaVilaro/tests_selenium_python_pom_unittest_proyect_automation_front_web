@@ -1,4 +1,5 @@
 import string
+import time
 import unittest
 import random
 from selenium import webdriver
@@ -7,7 +8,7 @@ from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
 from pages.page_sign_in import PageLogin
 from pages.page_create_an_account import PageCreateAccount
-
+from pages.page_sing_up import PageSingUp
 
 class SearchCases(unittest.TestCase):
     # Método con pre-condiciones
@@ -22,6 +23,7 @@ class SearchCases(unittest.TestCase):
         self.buyPage = PageBuy(self.driver)
         self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
+        self.signUp = PageSingUp(self.driver)
         #función que genera un email random
         def generate_email(prefix='huks214+', domain='gmail.com'):
             random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
@@ -29,8 +31,36 @@ class SearchCases(unittest.TestCase):
             return prefix + random_part + '@' + domain
         self.email = generate_email()
 
-    def test_email_adress(self):
+    def test_title_of_page(self):
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.email)
         self.login.push_create_an_account()
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
+
+    def test_sign_in_complete_verify_name_of_user(self):
+        self.indexPage.push_sign_in()
+        self.login.send_mail_box(self.email)
+        self.login.push_create_an_account()
+        self.createdAccount.select_button_radio_gender()
+        self.createdAccount.sender_first_name_and_last_name('Lorena', 'Pérez')
+        self.createdAccount.click_in_mail_for_confirmation()
+        self.createdAccount.sender_password('Password123')
+        self.createdAccount.select_day_month_and_year_with_value('3', '4', '1994')
+        self.createdAccount.select_check_box_newsletter()
+        self.createdAccount.sender_company_address_and_city('Software', 'América', 'San Martín')
+        self.createdAccount.select_state_with_value('12')
+        self.createdAccount.sender_postal_code('00000')
+        self.createdAccount.select_country_with_value('21')
+        self.createdAccount.complete_additional_information('Aditional Information, Great!')
+        self.createdAccount.number_phone_mobile_and_home_phone('111111111', '000000000')
+        self.createdAccount.sender_address_aditional_alias('This is my address!')
+        self.createdAccount.click_button_register()
+        name_user_register = self.signUp.return_text_user_register()
+        self.assertEqual('Lorena Pérez', name_user_register)
+
+    #Método con las post-condiciones
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
+
+
