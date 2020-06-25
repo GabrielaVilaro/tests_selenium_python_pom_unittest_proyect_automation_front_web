@@ -1,6 +1,3 @@
-import random
-import string
-
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -17,6 +14,6 @@ class PageLogin:
         sender_mail.send_keys(text)
 
     def push_create_an_account(self):
-        select_create_account = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.button_create_account))
-        select_create_account.click()
+        create_account = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.button_create_account))
+        create_account.click()
 
