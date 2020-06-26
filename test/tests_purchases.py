@@ -1,4 +1,3 @@
-import string
 import unittest
 from selenium import webdriver
 from pages.page_index import PageIndex
