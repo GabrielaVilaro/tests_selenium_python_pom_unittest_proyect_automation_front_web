@@ -24,7 +24,7 @@ class Purchases(unittest.TestCase):
         self.indexPage.search('T-Shirt')
         self.resultPage.click_color()
         self.buyPage.push_add_to_cart()
-        text_successfully_add_product = self.buyPadge.get_text_successfully_add_product_text()
+        text_successfully_add_product = self.buyPage.get_text_successfully_add_product_text()
         self.assertTrue(text_successfully_add_product in 'Product successfully added to your shopping cart')
 
 
