@@ -26,18 +26,12 @@ jobs:
     - name: Install SeleniumBase
       run: |
         python setup.py install
-    - name: Install Chrome and Firefox
+    - name: Install Chrome
       run: |
         sudo apt install google-chrome-stable
-        sudo apt-get install firefox
-    - name: Install chromedriver and geckodriver (Firefox Webdriver)
+    - name: Install chromedriver
       run: |
         seleniumbase install chromedriver
-        seleniumbase install geckodriver
-    - name: Make sure pytest is working
-      run: |
-        echo "def test_1(): pass" > nothing.py
-        pytest nothing.py
     - name: Run pytest tests_index.py --browser=chrome
       run: |
         pytest test/tests_index.py --browser=chrome
