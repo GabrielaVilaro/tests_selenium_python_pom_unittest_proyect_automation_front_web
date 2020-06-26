@@ -1,14 +1,19 @@
-name: Python package
-on: [push]
+name: CI build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     strategy:
-      max-parallel: 4
+      max-parallel: 5
       matrix:
-        python-version: [3.7]
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v1
@@ -20,16 +25,38 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Install SeleniumBase
+      run: |
+        python setup.py install
     - name: Lint with flake8
       run: |
         pip install flake8
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Install Chrome
+        # Stop the build if there are flake8 issues
+        flake8 . --count --show-source --statistics --exclude=temp
+    - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
-   - name: Run pytest test_demo_site.py --browser=chrome --headless
-     run: |
-      pytest test/tests_index.py --browser=chrome
+        sudo apt-get install firefox
+    - name: Install chromedriver and geckodriver (Firefox Webdriver)
+      run: |
+        seleniumbase install chromedriver
+        seleniumbase install geckodriver
+    - name: Make sure pytest is working
+      run: |
+        echo "def test_1(): pass" > nothing.py
+        pytest nothing.py
+    - name: Run pytest boilerplate_test.py --browser=chrome --headless
+      run: |
+        pytest examples/boilerplates/boilerplate_test.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+    - name: Run pytest test_demo_site.py --browser=chrome --headless
+      run: |
+        pytest examples/test_demo_site.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+    - name: Run pytest my_first_test.py --browser=chrome --headless
+      run: |
+        pytest examples/my_first_test.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+    - name: Run pytest test_inspect_html.py --browser=chrome --headless
+      run: |
+        pytest examples/test_inspect_html.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+    - name: Run pytest my_first_test.py --browser=firefox --headless
+      run: |
+        pytest examples/my_first_test.py --browser=firefox --headless -v -s --junit-xml=junit/test-results.xml
