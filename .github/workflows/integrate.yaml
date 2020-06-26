@@ -32,12 +32,12 @@ jobs:
     - name: Install chromedriver
       run: |
         seleniumbase install chromedriver
-    - name: Run pytest tests_index.py --browser=chrome
+    - name: Run pytest tests_index.py --browser=chrome --headless
       run: |
-        pytest test/tests_index.py --browser=chrome
-    - name: Run pytest tests_login.py --browser=chrome
+        pytest test/tests_index.py --browser=chrome --headless
+    - name: Run pytest tests_login.py --browser=chrome --headless
       run: |
-        pytest test/tests_login.py --browser=chrome
-    - name: Run pytest tests_purchase.py --browser=chrome
+        pytest test/tests_login.py --browser=chrome --headless
+    - name: Run pytest tests_purchase.py --browser=chrome --headless
       run: |
-        pytest test/tests_purchase.py --browser=chrome
+        pytest test/tests_purchase.py --browser=chrome --headless

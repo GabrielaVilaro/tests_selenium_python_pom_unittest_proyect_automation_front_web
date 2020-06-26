@@ -8,7 +8,7 @@ class SearchCases(unittest.TestCase):
     #Método con pre-condiciones
     def setUp(self):
         #instancio mi driver, en este caso chromedriver
-        self.driver = webdriver.Chrome('../../drivers/chromedriver')
+        self.driver = webdriver.Chrome('../drivers/chromedriver')
         self.driver.get('http://automationpractice.com/index.php')
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
