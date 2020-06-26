@@ -1,0 +1,16 @@
+name: integration ci cd
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ci_to_master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v1
+          with:
+             python-version: '3.7' # Version range or exact version of a Python version to use, using semvers version range syntax.
+                architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
