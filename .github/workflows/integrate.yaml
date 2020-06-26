@@ -14,7 +14,7 @@ jobs:
         python-version: [3.7]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -38,12 +38,12 @@ jobs:
       run: |
         echo "def test_1(): pass" > nothing.py
         pytest nothing.py
-    - name: Run pytest tests_index.py --browser=chrome --headless
+    - name: Run pytest tests_index.py --browser=chrome
       run: |
-        pytest test/tests_index.py --browser=chrome --headless
-    - name: Run pytest tests_login.py --browser=chrome --headless
+        pytest test/tests_index.py --browser=chrome
+    - name: Run pytest tests_login.py --browser=chrome
       run: |
-        pytest test/tests_login.py --browser=chrome --headless
-    - name: Run pytest tests_purchase.py --browser=chrome --headless
+        pytest test/tests_login.py --browser=chrome
+    - name: Run pytest tests_purchase.py --browser=chrome
       run: |
-        pytest test/tests_purchase.py --browser=chrome --headless
+        pytest test/tests_purchase.py --browser=chrome
