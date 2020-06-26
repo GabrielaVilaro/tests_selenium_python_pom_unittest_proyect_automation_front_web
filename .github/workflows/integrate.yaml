@@ -30,4 +30,5 @@ jobs:
     - name: Test With selenium
       run: |
         pip install selenium
-        python /Users/gabrielavilaro/PycharmProjects/practice_unittest/test/test_index.py
+        cd /Users/gabrielavilaro/PycharmProjects/practice_unittest/test/
+        python test_index.py
