@@ -58,9 +58,9 @@ class SearchCases(unittest.TestCase):
         self.createdAccount.sender_address_aditional_alias('This is my address!')
         self.createdAccount.click_button_register()
         name_user_register = self.myAccount.return_text_user_register()
-        title_register_sussefuly = self.myAccount.return_text_of_banner()
+        title_register_successfully = self.myAccount.return_text_of_banner()
         self.assertEqual('Lorena Pérez', name_user_register)
-        self.assertTrue('MY ACCOUNT' in title_register_sussefuly)
+        self.assertTrue('MY ACCOUNT' in title_register_successfully)
 
     # Método con las post-condiciones
     def tearDown(self):
