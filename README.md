@@ -8,8 +8,6 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 
 <center><a href="https://ibb.co/34BF78d"><img src="https://i.ibb.co/MZM1sjS/CASO-1.png" alt="CASO-1" border="0"></a>
-  
-  <a href="https://ibb.co/34BF78d"><img src="" alt="CASO-1" border="0"></a>
 
 <a href="https://ibb.co/4VxT8fp"><img src="https://i.ibb.co/qrwsNnp/CASO-2.png" alt="CASO-2" border="0"></a>
 
