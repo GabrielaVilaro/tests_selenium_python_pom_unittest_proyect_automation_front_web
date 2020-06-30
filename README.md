@@ -1,50 +1,26 @@
-# tests_selenium_python_pom_unittest
-Tests de práctica en Python, usando Selenium, UnitTest y Page Object Model
+**Pruebas automatizadas usando: Python, Selenium, UnitTest, Page Object Model (POM) hecho en Pycharm.**
 
-*SE IRÁN AGREGANDO NUEVOS CASOS.
+Primero escribí los casos de prueba, usando esta página de práctica: http://automationpractice.com/
 
-Scripts con POM (Page Object Model) con Python, Selenium y UnitTest
+Después realicé la auomatización de los casos de prueba usando las herramientas mencionadas anteriormente.
 
-CASO DE PRUEBA NÚMERO UNO:
+**Casos de prueba:**
 
-1- INGRESAR A LA PÁGINA http://automationpractice.com/index.php
 
-2- ESCRIBIR "CELULAR" EN EL BUSCADOR QUE APARECE EN PANTALLA
+<center><a href="https://ibb.co/34BF78d"><img src="https://i.ibb.co/MZM1sjS/CASO-1.png" alt="CASO-1" border="0"></a>
 
-3- CLICKEAR SOBRE EL ÍCONO DE LA LUPA PARA COMENZAR LA BÚSQUEDA RESULTADO ESPERADO: SE DEBE VISUALIZAR LA LEYENDA "No results were found for your search "Celular""
+<a href="https://ibb.co/4VxT8fp"><img src="https://i.ibb.co/qrwsNnp/CASO-2.png" alt="CASO-2" border="0"></a>
 
-CASO DE PRUEBA NÚMERO DOS:
+<a href="https://ibb.co/GQ59yjn"><img src="https://i.ibb.co/d45tFyj/CASO-3.png" alt="CASO-3" border="0"></a>
 
-1- INGRESAR A LA PÁGINA http://automationpractice.com/index.php
+<a href="https://ibb.co/wcH0KFR"><img src="https://i.ibb.co/TWXvHxk/CASO-4.png" alt="CASO-4" border="0"></a>
 
-2- ESCRIBIR "DRESS" EN EL BUSCADOR QUE APARECE EN PANTALLA
+<a href="https://ibb.co/Pr3YzTd"><img src="https://i.ibb.co/tHkhPZ9/CASO-5.png" alt="CASO-5" border="0"></a>
 
-3- CLICKEAR SOBRE EL ÍCONO DE LA LUPA PARA COMENZAR LA BÚSQUEDA RESULTADO EN ESPERAADO: DEBE ESTAR LA PALABRA "DRESS" DESPUÉS DE LA PALABRA "SEARCH" CON LOS RESULTADOS CORRECTOS DE LA BÚSQUEDA.
+<a href="https://ibb.co/rcg3mXW"><img src="https://i.ibb.co/0FkKczw/CASO-6-0.png" alt="CASO-6-0" border="0"></a>
+<a href="https://ibb.co/r6RNpkj"><img src="https://i.ibb.co/zRTD2sM/CASO-6-1.png" alt="CASO-6-1" border="0"></a>
 
-CASO DE PRUEBA NÚMERO TRES:
+<a href="https://ibb.co/m85T7Ct"><img src="https://i.ibb.co/74tCFJV/CASO-7.png" alt="CASO-7" border="0"></a> </center>
 
-1- INGRESAR A LA PÁGINA http://automationpractice.com/index.php
-
-2- ESCRIBIR "T-SHIRT" EN EL BUSCADOR QUE APARECE EN PANTALLA
-
-3- CLICKEAR SOBRE EL ÍCONO DE LA LUPA PARA COMENZAR LA BÚSQUEDA 
-
-RESULTADO EN ESPERAADO: DEBE ESTAR LA PALABRA "T-SHIRT" DESPUÉS DE LA PALABRA "SEARCH" CON LOS RESULTADOS CORRECTOS DE LA BÚSQUEDA.
-
-CASO DE PRUEBA NÚMERO CUATRO:
-
-1- INGRESAR A LA PÁGINA http://automationpractice.com/index.php
-
-2- ESCRIBIR "T-SHIRT" EN EL BUSCADOR QUE APARECE EN PANTALLA
-
-3- CLICKEAR SOBRE EL EL COLOR NARANJA.
-
-5- LIMPIAR EL CAMPO "CANTIDAD" DE PRODUCTOS BORRANDO EL NÚMERO 1 QUE VIENE POR DEFECTO.
-
-4- TIPEAR UN 5 EN EL CAMPO "CANTIDAD".
-
-5- CLICKEAR 3 VECES EL ÍCONO DE + PARA AUMENTAR EN 3 LA CANTIDAD DE PRODUCTO.
-
-RESULTADO ESPERADO: LA CANTIDAD DEL PRODUCTO DEBE QUEDAR EN TOTAL DE 8.
 
 
