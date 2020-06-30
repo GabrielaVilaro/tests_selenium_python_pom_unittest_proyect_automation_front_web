@@ -3,9 +3,6 @@ from selenium import webdriver
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
-from pages.page_sign_in import PageLogin
-from pages.page_create_an_account import PageCreateAccount
-from pages.page_my_account import PageMyAccount
 
 class Purchases(unittest.TestCase):
     #Método con pre-condiciones
