@@ -9,6 +9,7 @@ class PageBuy:
         self.button_plus = (By.XPATH, '//*[@id="quantity_wanted_p"]/a[2]/span/i')
         self.button_add_to_cart = (By.XPATH, '//*[@id="add_to_cart"]/button/span')
         self.successfully_add_product_text = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+        self.button_proceed_to_checkout = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span')
 
     def push_quantity(self, quantity):
         try:
@@ -38,4 +39,8 @@ class PageBuy:
         text_add_product = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.successfully_add_product_text))
         text_add = text_add_product.text
         return text_add
+
+    def push_button_proceed_to_checkout(self):
+        proceed_checkout =  WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_proceed_to_checkout))
+        proceed_checkout.click()
 
