@@ -6,7 +6,6 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 **Casos de prueba:**
 
-
 <a href="https://ibb.co/34BF78d"><img src="https://i.ibb.co/MZM1sjS/CASO-1.png" alt="CASO-1" border="0"></a>
 
 <a href="https://ibb.co/4VxT8fp"><img src="https://i.ibb.co/qrwsNnp/CASO-2.png" alt="CASO-2" border="0"></a>
@@ -23,5 +22,5 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 <a href="https://ibb.co/m85T7Ct"><img src="https://i.ibb.co/74tCFJV/CASO-7.png" alt="CASO-7" border="0"></a>
 
-
+<a href="https://ibb.co/H7HLywH"><img src="https://i.ibb.co/1ZmYNym/Screen-Shot-2020-07-03-at-15-40-20.png" alt="Screen-Shot-2020-07-03-at-15-40-20" border="0"></a>
 
