@@ -87,7 +87,10 @@ class Purchases(unittest.TestCase):
         self.assertEqual('SHIPPING', title_of_page)
         self.assertEqual('$2.00', price_of_delivery)
 
-    def test_page_of_payment_product(self):
+    def test_page_of_payment_product_title_and_finally_price_total(self):
+        '''Este test verifica que efectivamete se haya pasado a la página de pago y que el
+        precio total sea el correcto'''
+
         self.indexPage.push_sign_in()
         self.login.send_mail_user_registered('test_user24@gmail.com')
         self.login.send_password_user_registered('Password123')
