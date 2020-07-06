@@ -6,7 +6,7 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 **Casos de prueba:**
 
-Los casos de prueba se van acualizando acá: https://drive.google.com/file/d/1OI7XDttQVI5newKCmUBJfi0KEvYoXbRu/view?usp=sharing
+Los casos de prueba se van acualizando acá: https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNbyV9Q/edit?usp=sharing
 
 <a href="https://ibb.co/34BF78d"><img src="https://i.ibb.co/MZM1sjS/CASO-1.png" alt="CASO-1" border="0"></a>
 
