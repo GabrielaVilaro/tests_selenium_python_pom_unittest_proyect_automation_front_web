@@ -34,12 +34,18 @@ class SearchCases(unittest.TestCase):
         self.email = generate_email()
 
     def test_title_of_page(self):
+        '''Este test verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
+        se pase a la sección AUTHENTICATION'''
+
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.email)
         self.login.push_create_an_account()
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
     def test_sign_in_complete_verify_name_of_user_and_title_banner_my_account(self):
+        '''Este test realiza un registro completo y posteriormente valida que el nombre de usuario
+        coincida efectivamente con el creado y que se esté en la página MY ACCOUNT'''
+
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.email)
         self.login.push_create_an_account()
