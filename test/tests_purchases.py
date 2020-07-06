@@ -87,6 +87,24 @@ class Purchases(unittest.TestCase):
         self.assertEqual('SHIPPING', title_of_page)
         self.assertEqual('$2.00', price_of_delivery)
 
+    def test_page_of_payment_product(self):
+        self.indexPage.push_sign_in()
+        self.login.send_mail_user_registered('test_user24@gmail.com')
+        self.login.send_password_user_registered('Password123')
+        self.login.push_button_sign_in_registered()
+        self.indexPage.search('T-Shirt')
+        self.resultPage.click_color()
+        self.buyPage.push_add_to_cart()
+        self.buyPage.push_button_proceed_to_checkout()
+        self.cartSummary.push_button_proceed_to_checkout_address()
+        self.cartSummary.push_button_proceed_to_checkout_shipping()
+        self.cartSummary.click_of_check_box_terms_and_conditions()
+        self.cartSummary.push_button_proceed_to_checkout_payment()
+        title_payment = self.cartSummary.get_text_of_title_payment()
+        price_finally = self.cartSummary.get_text_price_total_finally()
+        self.assertEqual('PLEASE CHOOSE YOUR PAYMENT METHOD', title_payment)
+        self.assertEqual('$19.25', price_finally)
+
     # Método con las post-condiciones
     def tearDown(self):
         self.driver.close()

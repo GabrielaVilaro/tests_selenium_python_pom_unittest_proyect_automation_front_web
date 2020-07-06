@@ -20,6 +20,10 @@ class PageCartSummary:
             By.CLASS_NAME, 'delivery_option_price')
         self.check_box_agree_terms_and_conditions = (By.ID, 'cgv')
         self.button_proceed_to_checkout_shipping = (By.XPATH, '//*[@id="center_column"]/form/p/button/span')
+        #payment
+        self.text_title_page_payment = (By.XPATH, '//*[@id="center_column"]/h1')
+        self.total_price_finally = (By.ID, 'total_price')
+        self.button_proceed_to_checkout_payment = (By.XPATH, '//*[@id="form"]/p/button/span')
 
     # summary
     def get_text_of_title_shopping_cart(self):
@@ -77,3 +81,22 @@ class PageCartSummary:
         push_button_shipping = WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located(self.button_proceed_to_checkout_shipping))
         push_button_shipping.click()
+
+    #payment
+
+    def push_button_proceed_to_checkout_payment(self):
+        push_button_payment = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.button_proceed_to_checkout_payment))
+        push_button_payment.click()
+
+    def get_text_of_title_payment(self):
+        text_title_payment = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.text_title_page_payment))
+        text_title = text_title_payment.text
+        return text_title
+
+    def get_text_price_total_finally(self):
+        price_total = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.total_price_finally))
+        price = price_total.text
+        return price

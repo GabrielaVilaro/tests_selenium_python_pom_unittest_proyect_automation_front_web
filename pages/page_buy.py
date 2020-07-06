@@ -41,6 +41,6 @@ class PageBuy:
         return text_add
 
     def push_button_proceed_to_checkout(self):
-        proceed_checkout =  WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_proceed_to_checkout))
+        proceed_checkout = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_proceed_to_checkout))
         proceed_checkout.click()
 
