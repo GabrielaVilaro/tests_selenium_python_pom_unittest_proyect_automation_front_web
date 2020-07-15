@@ -5,6 +5,7 @@ from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
 from pages.page_cart_summary import PageCartSummary
 from pages.page_sign_in import PageLogin
+from user.user_static import StaticUserRegistered
 
 
 class Purchases(unittest.TestCase):
@@ -20,6 +21,7 @@ class Purchases(unittest.TestCase):
         self.buyPage = PageBuy(self.driver)
         self.cartSummary = PageCartSummary(self.driver)
         self.login = PageLogin(self.driver)
+        self.userStatic = StaticUserRegistered()
 
     def test_product_successfully_added_to_cart_text(self):
         '''Este test valida que un producto sea agregado correctamente al carrito de compras'''
@@ -56,8 +58,8 @@ class Purchases(unittest.TestCase):
         order, please write it in the field below.'''
 
         self.indexPage.push_sign_in()
-        self.login.send_mail_user_registered('test_user24@gmail.com')
-        self.login.send_password_user_registered('Password123')
+        self.login.send_mail_user_registered(self.userStatic.email_user_registered)
+        self.login.send_password_user_registered(self.userStatic.password_user_registered)
         self.login.push_button_sign_in_registered()
         self.indexPage.search('T-Shirt')
         self.resultPage.click_color()

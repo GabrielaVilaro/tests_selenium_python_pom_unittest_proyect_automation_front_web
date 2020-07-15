@@ -48,9 +48,11 @@ class PageCreateAccount:
             EC.presence_of_element_located(self.radio_button_gender))
         push_radio_button.click()
 
-    def sender_first_name_and_last_name(self, first_name, last_name):
+    def sender_first_name(self, first_name):
         sender_first_name = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.first_name_box))
         sender_first_name.send_keys(first_name)
+
+    def sender_last_name(self, last_name):
         sender_last_name = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.last_name_box))
         sender_last_name.send_keys(last_name)
 

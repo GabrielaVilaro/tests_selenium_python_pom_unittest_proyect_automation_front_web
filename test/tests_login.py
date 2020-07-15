@@ -7,6 +7,7 @@ from pages.page_sign_in import PageLogin
 from pages.page_create_an_account import PageCreateAccount
 from pages.page_my_account import PageMyAccount
 from functions.functions import FunctionsUtils
+from user.user_static import StaticUserSigIn
 
 
 class SearchCases(unittest.TestCase):
@@ -24,7 +25,7 @@ class SearchCases(unittest.TestCase):
         self.createdAccount = PageCreateAccount(self.driver)
         self.myAccount = PageMyAccount(self.driver)
         self.email = FunctionsUtils()
-
+        self.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
         '''Este test verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
@@ -43,9 +44,10 @@ class SearchCases(unittest.TestCase):
         self.login.send_mail_box(self.email.generate_email())
         self.login.push_create_an_account()
         self.createdAccount.select_button_radio_gender()
-        self.createdAccount.sender_first_name_and_last_name('Lorena', 'Pérez')
+        self.createdAccount.sender_first_name(self.userStatic.first_name_user)
+        self.createdAccount.sender_last_name(self.userStatic.last_name_user)
         self.createdAccount.click_in_mail_for_confirmation()
-        self.createdAccount.sender_password('Password123')
+        self.createdAccount.sender_password(self.userStatic.password_user)
         self.createdAccount.select_day_month_and_year_with_value('3', '4', '1994')
         self.createdAccount.select_check_box_newsletter()
         self.createdAccount.sender_company_address_and_city('Software', 'América', 'San Martín')
