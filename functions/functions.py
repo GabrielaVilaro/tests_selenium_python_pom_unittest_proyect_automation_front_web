@@ -13,3 +13,9 @@ class FunctionsUtils:
         random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
                               for _ in range(10))
         return self.prefix + random_part + '@' + self.domain
+
+    def generate_number_phone(self):
+        random_part = ''.join(random.choice(string.digits)
+                              for _ in range(10))
+        return random_part
+

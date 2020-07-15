@@ -24,7 +24,7 @@ class SearchCases(unittest.TestCase):
         self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
         self.myAccount = PageMyAccount(self.driver)
-        self.email = FunctionsUtils()
+        self.utilsFunctions = FunctionsUtils()
         self.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
@@ -32,7 +32,7 @@ class SearchCases(unittest.TestCase):
         se pase a la sección AUTHENTICATION'''
 
         self.indexPage.push_sign_in()
-        self.login.send_mail_box(self.email.generate_email())
+        self.login.send_mail_box(self.utilsFunctions.generate_email())
         self.login.push_create_an_account()
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
@@ -41,7 +41,7 @@ class SearchCases(unittest.TestCase):
         coincida efectivamente con el creado y que se esté en la página MY ACCOUNT'''
 
         self.indexPage.push_sign_in()
-        self.login.send_mail_box(self.email.generate_email())
+        self.login.send_mail_box(self.utilsFunctions.generate_email())
         self.login.push_create_an_account()
         self.createdAccount.select_button_radio_gender()
         self.createdAccount.sender_first_name(self.userStatic.first_name_user)
@@ -55,7 +55,8 @@ class SearchCases(unittest.TestCase):
         self.createdAccount.sender_postal_code('00000')
         self.createdAccount.select_country_with_value('21')
         self.createdAccount.complete_additional_information('Aditional Information, Great!')
-        self.createdAccount.number_phone_mobile_and_home_phone('111111111', '000000000')
+        self.createdAccount.number_phone_mobile_and_home_phone(self.utilsFunctions.generate_number_phone(), self.
+                                                               utilsFunctions.generate_number_phone())
         self.createdAccount.sender_address_aditional_alias('This is my address!')
         self.createdAccount.click_button_register()
         name_user_register = self.myAccount.return_text_user_register()
