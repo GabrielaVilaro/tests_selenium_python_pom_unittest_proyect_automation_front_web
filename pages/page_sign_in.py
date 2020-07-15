@@ -2,6 +2,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
+
 class PageLogin:
 
     def __init__(self, driver):
@@ -18,11 +19,13 @@ class PageLogin:
         sender_mail.send_keys(text)
 
     def push_create_an_account(self):
-        create_account = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.button_create_account))
+        create_account = WebDriverWait(self.driver, 5).until(
+            EC.visibility_of_element_located(self.button_create_account))
         create_account.click()
 
     def push_button_sign_in_registered(self):
-        sign_in_registered = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.button_sign_in_registered))
+        sign_in_registered = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.button_sign_in_registered))
         sign_in_registered.click()
 
     def send_mail_user_registered(self, text):
@@ -32,5 +35,3 @@ class PageLogin:
     def send_password_user_registered(self, text):
         send_pass = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.box_password_registered))
         send_pass.send_keys(text)
-
-
