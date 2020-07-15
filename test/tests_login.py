@@ -1,6 +1,4 @@
-import string
 import unittest
-import random
 from selenium import webdriver
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
@@ -8,6 +6,7 @@ from pages.page_buy import PageBuy
 from pages.page_sign_in import PageLogin
 from pages.page_create_an_account import PageCreateAccount
 from pages.page_my_account import PageMyAccount
+from functions.functions import FunctionsUtils
 
 
 class SearchCases(unittest.TestCase):
@@ -24,21 +23,15 @@ class SearchCases(unittest.TestCase):
         self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
         self.myAccount = PageMyAccount(self.driver)
+        self.email = FunctionsUtils()
 
-        # función que genera un email random
-        def generate_email(prefix='test123+', domain='gmail.com'):
-            random_part = ''.join(random.choice(string.ascii_lowercase + string.digits)
-                                  for _ in range(10))
-            return prefix + random_part + '@' + domain
-
-        self.email = generate_email()
 
     def test_title_of_page(self):
         '''Este test verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
         se pase a la sección AUTHENTICATION'''
 
         self.indexPage.push_sign_in()
-        self.login.send_mail_box(self.email)
+        self.login.send_mail_box(self.email.generate_email())
         self.login.push_create_an_account()
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
@@ -47,7 +40,7 @@ class SearchCases(unittest.TestCase):
         coincida efectivamente con el creado y que se esté en la página MY ACCOUNT'''
 
         self.indexPage.push_sign_in()
-        self.login.send_mail_box(self.email)
+        self.login.send_mail_box(self.email.generate_email())
         self.login.push_create_an_account()
         self.createdAccount.select_button_radio_gender()
         self.createdAccount.sender_first_name_and_last_name('Lorena', 'Pérez')
