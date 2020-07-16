@@ -12,23 +12,23 @@ from user.user_static import StaticUserSigIn
 
 class SearchCases(unittest.TestCase):
     # Método con pre-condiciones
-    def setUp(self):
+    def setUp(cls):
         # instancio mi driver, en este caso chromedriver
-        self.driver = webdriver.Chrome('../drivers/chromedriver')
-        self.driver.get('http://automationpractice.com/index.php')
-        self.driver.implicitly_wait(5)
-        self.driver.maximize_window()
-        self.indexPage = PageIndex(self.driver)
-        self.itemPage = ResultCases(self.driver)
-        self.buyPage = PageBuy(self.driver)
-        self.login = PageLogin(self.driver)
-        self.createdAccount = PageCreateAccount(self.driver)
-        self.myAccount = PageMyAccount(self.driver)
-        self.utilsFunctions = FunctionsUtils()
-        self.userStatic = StaticUserSigIn()
+        cls.driver = webdriver.Chrome('../drivers/chromedriver')
+        cls.driver.get('http://automationpractice.com/index.php')
+        cls.driver.implicitly_wait(5)
+        cls.driver.maximize_window()
+        cls.indexPage = PageIndex(cls.driver)
+        cls.itemPage = ResultCases(cls.driver)
+        cls.buyPage = PageBuy(cls.driver)
+        cls.login = PageLogin(cls.driver)
+        cls.createdAccount = PageCreateAccount(cls.driver)
+        cls.myAccount = PageMyAccount(cls.driver)
+        cls.utilsFunctions = FunctionsUtils()
+        cls.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
-        '''Este test verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
+        '''Este tests verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
         se pase a la sección AUTHENTICATION'''
 
         self.indexPage.push_sign_in()
@@ -37,7 +37,7 @@ class SearchCases(unittest.TestCase):
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
     def test_sign_in_complete_verify_name_of_user_and_title_banner_my_account(self):
-        '''Este test realiza un registro completo y posteriormente valida que el nombre de usuario
+        '''Este tests realiza un registro completo y posteriormente valida que el nombre de usuario
         coincida efectivamente con el creado y que se esté en la página MY ACCOUNT'''
 
         self.indexPage.push_sign_in()
@@ -68,3 +68,7 @@ class SearchCases(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
+
+
+if __name__ == '__main__':
+    unittest.main()
