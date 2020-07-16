@@ -2,9 +2,9 @@ import unittest
 from selenium import webdriver
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
-from pages.page_buy import PageBuy
+from pages import PageBuy
 from pages.page_sign_in import PageLogin
-from pages.page_create_an_account import PageCreateAccount
+from pages import PageCreateAccount
 from pages.page_my_account import PageMyAccount
 from functions.functions import FunctionsUtils
 from user.user_static import StaticUserSigIn
@@ -12,20 +12,20 @@ from user.user_static import StaticUserSigIn
 
 class SearchCases(unittest.TestCase):
     # Método con pre-condiciones
-    def setUp(cls):
+    def setUp(self):
         # instancio mi driver, en este caso chromedriver
-        cls.driver = webdriver.Chrome('../drivers/chromedriver')
-        cls.driver.get('http://automationpractice.com/index.php')
-        cls.driver.implicitly_wait(5)
-        cls.driver.maximize_window()
-        cls.indexPage = PageIndex(cls.driver)
-        cls.itemPage = ResultCases(cls.driver)
-        cls.buyPage = PageBuy(cls.driver)
-        cls.login = PageLogin(cls.driver)
-        cls.createdAccount = PageCreateAccount(cls.driver)
-        cls.myAccount = PageMyAccount(cls.driver)
-        cls.utilsFunctions = FunctionsUtils()
-        cls.userStatic = StaticUserSigIn()
+        self.driver = webdriver.Chrome('../drivers/chromedriver')
+        self.driver.get('http://automationpractice.com/index.php')
+        self.driver.implicitly_wait(5)
+        self.driver.maximize_window()
+        self.indexPage = PageIndex(self.driver)
+        self.itemPage = ResultCases(self.driver)
+        self.buyPage = PageBuy(self.driver)
+        self.login = PageLogin(self.driver)
+        self.createdAccount = PageCreateAccount(self.driver)
+        self.myAccount = PageMyAccount(self.driver)
+        self.utilsFunctions = FunctionsUtils()
+        self.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
         '''Este tests verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente

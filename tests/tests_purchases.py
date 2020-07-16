@@ -2,26 +2,26 @@ import unittest
 from selenium import webdriver
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
-from pages.page_buy import PageBuy
-from pages.page_cart_summary import PageCartSummary
+from pages import PageBuy
+from pages import PageCartSummary
 from pages.page_sign_in import PageLogin
 from user.user_static import StaticUserRegistered
 
 
 class Purchases(unittest.TestCase):
     # Método con pre-condiciones
-    def setUp(cls):
+    def setUp(self):
         # instancio mi driver, en este caso chromedriver
-        cls.driver = webdriver.Chrome('../drivers/chromedriver')
-        cls.driver.get('http://automationpractice.com/index.php')
-        cls.driver.implicitly_wait(5)
-        cls.driver.maximize_window()
-        cls.indexPage = PageIndex(cls.driver)
-        cls.resultPage = ResultCases(cls.driver)
-        cls.buyPage = PageBuy(cls.driver)
-        cls.cartSummary = PageCartSummary(cls.driver)
-        cls.login = PageLogin(cls.driver)
-        cls.userStatic = StaticUserRegistered()
+        self.driver = webdriver.Chrome('../drivers/chromedriver')
+        self.driver.get('http://automationpractice.com/index.php')
+        self.driver.implicitly_wait(5)
+        self.driver.maximize_window()
+        self.indexPage = PageIndex(self.driver)
+        self.resultPage = ResultCases(self.driver)
+        self.buyPage = PageBuy(self.driver)
+        self.cartSummary = PageCartSummary(self.driver)
+        self.login = PageLogin(self.driver)
+        self.userStatic = StaticUserRegistered()
 
     def test_product_successfully_added_to_cart_text(self):
         '''Este tests valida que un producto sea agregado correctamente al carrito de compras'''
