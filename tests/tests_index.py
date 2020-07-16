@@ -1,9 +1,8 @@
 from selenium import webdriver
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
-from pages import PageBuy
+from pages.page_buy import PageBuy
 import unittest
-import HtmlTestRunner
 
 
 class SearchCases(unittest.TestCase):
@@ -67,4 +66,4 @@ class SearchCases(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='reports'))
+    unittest.main()

@@ -1,12 +1,12 @@
 import unittest
 from selenium import webdriver
+from functions.functions import FunctionsUtils
 from pages.page_index import PageIndex
 from pages.page_results import ResultCases
-from pages import PageBuy
+from pages.page_buy import PageBuy
 from pages.page_sign_in import PageLogin
-from pages import PageCreateAccount
+from pages.page_create_an_account import PageCreateAccount
 from pages.page_my_account import PageMyAccount
-from functions.functions import FunctionsUtils
 from user.user_static import StaticUserSigIn
 
 
