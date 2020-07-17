@@ -5,7 +5,6 @@ from pages.page_buy import PageBuy
 import unittest
 import pytest
 
-
 class TestSearchCases(unittest.TestCase):
     # Método con pre-condiciones
     def setUp(self):
@@ -58,7 +57,7 @@ class TestSearchCases(unittest.TestCase):
         '''Este tests checkea el número de teléfono de la página'''
 
         phone_number = self.indexPage.return_phone_number_of_banner()
-        assert phone_number == '0123-456-789'
+        self.assertEqual(phone_number, '0123-456-789')
 
     # Método con las post-condiciones
     def tearDown(self):
@@ -67,4 +66,4 @@ class TestSearchCases(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    pytest.main()
+    unittest.main()
