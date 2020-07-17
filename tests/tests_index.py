@@ -3,9 +3,10 @@ from pages.page_index import PageIndex
 from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
 import unittest
+import pytest
 
 
-class SearchCases(unittest.TestCase):
+class TestSearchCases(unittest.TestCase):
     # Método con pre-condiciones
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
@@ -57,7 +58,7 @@ class SearchCases(unittest.TestCase):
         '''Este tests checkea el número de teléfono de la página'''
 
         phone_number = self.indexPage.return_phone_number_of_banner()
-        self.assertEqual(phone_number, '0123-456-789')
+        assert phone_number == '0123-456-789'
 
     # Método con las post-condiciones
     def tearDown(self):
@@ -66,4 +67,4 @@ class SearchCases(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    pytest.main()
