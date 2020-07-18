@@ -6,7 +6,7 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 **Casos de prueba:**
 
-Los casos de prueba se pueden ver escritos acá. 
+Los casos de prueba se pueden ver escritos acá:
 
 https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNbyV9Q/edit?usp=sharing
 
@@ -22,4 +22,11 @@ El proyecto incluye reporte en HTLM que se puede ver al finalizar la ejecución.
 Ejemplo de reporte del archivo tests_index_page.py
 
 
-<a href="https://subefotos.com/ver/?efd0a4f506774897a57f4fc64d4d5c2eo.png" target="_blank"><img src="http://thumbs.subefotos.com/efd0a4f506774897a57f4fc64d4d5c2eo.jpg" /></a>
+<a href="https://ibb.co/BBhK0D4"><img src="https://i.ibb.co/ZxQ1qsH/Screen-Shot-2020-07-18-at-14-14-43.png" alt="Screen-Shot-2020-07-18-at-14-14-43" border="0"></a>
+
+**La documentación completa del proyecto se puede ver abriendo el archivo /docs/tests/index.html en un navegador, haciendo click izquierdo y en "Open Browser elejir su navegador de preferencia"**
+
+**Para generar la documentación usé pdcos3 (está dentro de requirements.txt)***
+
+<a href="https://ibb.co/X3VyNQZ"><img src="https://i.ibb.co/jWHVBNv/Screen-Shot-2020-07-18-at-14-55-34.png" alt="Screen-Shot-2020-07-18-at-14-55-34" border="0"></a>
+
