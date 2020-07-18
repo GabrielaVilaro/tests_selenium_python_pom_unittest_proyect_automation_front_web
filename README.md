@@ -6,23 +6,19 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 **Casos de prueba:**
 
-Los casos de prueba se van acualizando acá: https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNbyV9Q/edit?usp=sharing
+Los casos de prueba se pueden ver escritos acá. 
 
-<a href="https://ibb.co/34BF78d"><img src="https://i.ibb.co/MZM1sjS/CASO-1.png" alt="CASO-1" border="0"></a>
+https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNbyV9Q/edit?usp=sharing
 
-<a href="https://ibb.co/4VxT8fp"><img src="https://i.ibb.co/qrwsNnp/CASO-2.png" alt="CASO-2" border="0"></a>
 
-<a href="https://ibb.co/GQ59yjn"><img src="https://i.ibb.co/d45tFyj/CASO-3.png" alt="CASO-3" border="0"></a>
+Requisitos
 
-<a href="https://ibb.co/wcH0KFR"><img src="https://i.ibb.co/TWXvHxk/CASO-4.png" alt="CASO-4" border="0"></a>
+  Python >= 3.5
+  Instalar las dependencias del proyecto: pip3 install -r requirements.txt
+  Pycharm/VS Code
+  
+El proyecto incluye reporte en HTLM que se puede ver al finalizar la ejecución.
 
-<a href="https://ibb.co/Pr3YzTd"><img src="https://i.ibb.co/tHkhPZ9/CASO-5.png" alt="CASO-5" border="0"></a>
+Ejemplo de reporte del archivo tests_index_page.py
 
-<a href="https://ibb.co/rcg3mXW"><img src="https://i.ibb.co/0FkKczw/CASO-6-0.png" alt="CASO-6-0" border="0"></a>
-
-<a href="https://ibb.co/r6RNpkj"><img src="https://i.ibb.co/zRTD2sM/CASO-6-1.png" alt="CASO-6-1" border="0"></a>
-
-<a href="https://ibb.co/m85T7Ct"><img src="https://i.ibb.co/74tCFJV/CASO-7.png" alt="CASO-7" border="0"></a>
-
-<a href="https://ibb.co/H7HLywH"><img src="https://i.ibb.co/1ZmYNym/Screen-Shot-2020-07-03-at-15-40-20.png" alt="Screen-Shot-2020-07-03-at-15-40-20" border="0"></a>
-
+<a href="https://subefotos.com/ver/?efd0a4f506774897a57f4fc64d4d5c2eo.png" target="_blank"><img src="http://thumbs.subefotos.com/efd0a4f506774897a57f4fc64d4d5c2eo.jpg" /></a>
