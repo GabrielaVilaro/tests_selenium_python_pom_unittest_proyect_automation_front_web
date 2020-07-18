@@ -1,3 +1,5 @@
+'''Tests para verificar la página de login de automationpractice.com'''
+
 import unittest
 from selenium import webdriver
 from functions.functions import FunctionsUtils
@@ -9,9 +11,13 @@ from pages.page_create_an_account import PageCreateAccount
 from pages.page_my_account import PageMyAccount
 from user.user_static import StaticUserSigIn
 
+__pdoc__ = {}
+__pdoc__["TestsPageLogin"] = False
 
-class SearchCases(unittest.TestCase):
-    # Método con pre-condiciones
+
+class TestsPageLogin(unittest.TestCase):
+    '''Método con las pre-condiciones'''
+
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
         self.driver = webdriver.Chrome('../drivers/chromedriver')
@@ -64,7 +70,8 @@ class SearchCases(unittest.TestCase):
         self.assertEqual('Lorena Pérez', name_user_register)
         self.assertTrue('MY ACCOUNT' in title_register_successfully)
 
-    # Método con las post-condiciones
+    ''' Método con las post-condiciones'''
+
     def tearDown(self):
         self.driver.close()
         self.driver.quit()

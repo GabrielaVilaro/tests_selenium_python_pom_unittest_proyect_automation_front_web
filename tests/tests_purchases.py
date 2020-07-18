@@ -1,3 +1,5 @@
+'''Tests realizados para verificar la página de compra de automationpractice.com'''
+
 import unittest
 from selenium import webdriver
 from pages.page_index import PageIndex
@@ -7,9 +9,13 @@ from pages.page_cart_summary import PageCartSummary
 from pages.page_sign_in import PageLogin
 from user.user_static import StaticUserRegistered
 
+__pdoc__ = {}
+__pdoc__["TestsPagePurchases"] = False
 
-class Purchases(unittest.TestCase):
-    # Método con pre-condiciones
+
+class TestsPagePurchases(unittest.TestCase):
+    '''Método con las pre-condiciones'''
+
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
         self.driver = webdriver.Chrome('../drivers/chromedriver')
@@ -110,7 +116,8 @@ class Purchases(unittest.TestCase):
         self.assertEqual('PLEASE CHOOSE YOUR PAYMENT METHOD', title_payment)
         self.assertEqual('$19.25', price_finally)
 
-    # Método con las post-condiciones
+    ''' Método con las post-condiciones'''
+
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
