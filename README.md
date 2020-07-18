@@ -1,5 +1,7 @@
 **Pruebas automatizadas usando: Python, Selenium, UnitTest, Page Object Model (POM) hecho en Pycharm.**
 
+**Proyecto en curso, los casos de pruebas y capturas pueden no estar actualizados**
+
 Primero escribí los casos de prueba, usando esta página de práctica: http://automationpractice.com/
 
 Después realicé la auomatización de los casos de prueba usando las herramientas mencionadas anteriormente.
