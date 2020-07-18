@@ -28,5 +28,5 @@ Ejemplo de reporte del archivo tests_index_page.py
 
 **Para generar la documentación usé pdcos3 (está dentro de requirements.txt)***
 
-<a href="https://ibb.co/X3VyNQZ"><img src="https://i.ibb.co/jWHVBNv/Screen-Shot-2020-07-18-at-14-55-34.png" alt="Screen-Shot-2020-07-18-at-14-55-34" border="0"></a>
+<a href="https://ibb.co/jkZcFQc"><img src="https://i.ibb.co/1GJDxPD/Screen-Shot-2020-07-18-at-15-00-55.png" alt="Screen-Shot-2020-07-18-at-15-00-55" border="0"></a>
 
