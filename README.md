@@ -28,7 +28,7 @@ Ejemplo de reporte del archivo tests_index_page.py
 
 **La documentación completa del proyecto se puede ver abriendo el archivo /docs/tests/index.html en un navegador, haciendo click izquierdo y en "Open Browser" elejir su navegador de preferencia**
 
-Para generar la documentación usé pdocs3 (está dentro de requirements.txt)
+Para generar la documentación usé pdocs3 (está dentro de requirements.txt)  pdoc --html tests
 
 <a href="https://ibb.co/jkZcFQc"><img src="https://i.ibb.co/1GJDxPD/Screen-Shot-2020-07-18-at-15-00-55.png" alt="Screen-Shot-2020-07-18-at-15-00-55" border="0"></a>
 
