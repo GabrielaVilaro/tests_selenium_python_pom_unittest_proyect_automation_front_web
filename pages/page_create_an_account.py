@@ -2,12 +2,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
 
-class PageCreateAccount:
+class PageCreateAccount(BasePage):
     def __init__(self, driver):
         # locators datos personales
-        self.driver = driver
+        super().__init__(driver)
         self.title_of_create_authentication = (By.XPATH, '//*[@id="noSlide"]/h1')
         self.radio_button_gender = (By.ID, 'id_gender2')
         self.first_name_box = (By.ID, 'customer_firstname')

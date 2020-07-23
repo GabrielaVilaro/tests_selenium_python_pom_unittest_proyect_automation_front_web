@@ -2,16 +2,18 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
-class ResultCases:
+
+class ResultCases(BasePage):
     def __init__(self, driver):
+        super().__init__(driver)
         self.no_result = (By.XPATH, '//*[@id="center_column"]/p')
         self.title_banner = (By.XPATH, '//*[@id="center_column"]/h1/span[1]')
         self.quick_view = (By.XPATH, '//*[@id="center_column"]/ul/li/div/div[1]/div/a[2]')
         self.colour_orange = (By.ID, 'color_1')
         self.order_list = (By.XPATH, '//*[@id="list"]/a/i')
         self.select_product = (By.ID, 'selectProductSort')
-        self.driver = driver
 
     def get_text(self):
         text_get = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.no_result))

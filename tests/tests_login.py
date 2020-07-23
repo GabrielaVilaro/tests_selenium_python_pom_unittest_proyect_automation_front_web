@@ -10,6 +10,7 @@ from pages.page_sign_in import PageLogin
 from pages.page_create_an_account import PageCreateAccount
 from pages.page_my_account import PageMyAccount
 from user.user_static import StaticUserSigIn
+from pages.base_page import BasePage
 
 __pdoc__ = {}
 __pdoc__["TestsPageLogin"] = False
@@ -20,14 +21,15 @@ class TestsPageLogin(unittest.TestCase):
 
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
-        self.driver = webdriver.Chrome('../drivers/chromedriver')
-        self.driver.get('http://automationpractice.com/index.php')
+        self.basePage = BasePage()
+        self.driver = webdriver.Chrome(self.basePage.driver)
+        self.driver.get(self.basePage.base_url)
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
+        self.login = PageLogin(self.driver)
         self.indexPage = PageIndex(self.driver)
         self.itemPage = ResultCases(self.driver)
         self.buyPage = PageBuy(self.driver)
-        self.login = PageLogin(self.driver)
         self.createdAccount = PageCreateAccount(self.driver)
         self.myAccount = PageMyAccount(self.driver)
         self.utilsFunctions = FunctionsUtils()

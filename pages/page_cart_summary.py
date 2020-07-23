@@ -1,11 +1,12 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from pages.base_page import BasePage
 
 
-class PageCartSummary:
+class PageCartSummary(BasePage):
     def __init__(self, driver):
-        self.driver = driver
+        super().__init__(driver)
         # summary
         self.title_text_cart = (By.ID, 'cart_title')
         self.total_valor_price = (By.ID, 'total_price')

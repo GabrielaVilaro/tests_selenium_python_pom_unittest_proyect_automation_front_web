@@ -5,6 +5,7 @@ from pages.page_index import PageIndex
 from pages.page_results import ResultCases
 from pages.page_buy import PageBuy
 import unittest
+from pages.base_page import BasePage
 
 __pdoc__ = {}
 __pdoc__["TestSearchCases"] = False
@@ -15,8 +16,9 @@ class TestSearchCases(unittest.TestCase):
 
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
-        self.driver = webdriver.Chrome('../drivers/chromedriver')
-        self.driver.get('http://automationpractice.com/index.php')
+        self.basePage = BasePage()
+        self.driver = webdriver.Chrome(self.basePage.driver)
+        self.driver.get(self.basePage.base_url)
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
         self.indexPage = PageIndex(self.driver)
