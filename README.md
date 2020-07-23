@@ -8,10 +8,9 @@ Después realicé la auomatización de los casos de prueba usando las herramient
 
 **Casos de prueba:**
 
-Los casos de prueba se pueden ver escritos acá:
+Los casos de prueba se pueden ver escritos acá. 
 
 https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNbyV9Q/edit?usp=sharing
-
 
 **Requisitos**
 
@@ -31,4 +30,3 @@ Ejemplo de reporte del archivo tests_index_page.py
 Para generar la documentación usé pdocs3 (está dentro de requirements.txt)  pdoc --html tests
 
 <a href="https://ibb.co/jkZcFQc"><img src="https://i.ibb.co/1GJDxPD/Screen-Shot-2020-07-18-at-15-00-55.png" alt="Screen-Shot-2020-07-18-at-15-00-55" border="0"></a>
-
