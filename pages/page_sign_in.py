@@ -1,12 +1,13 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
 
-class PageLogin:
+class PageLogin(BasePage):
 
     def __init__(self, driver):
-        self.driver = driver
+        super().__init__(driver)
         self.box_email_adress = (By.ID, 'email_create')
         self.button_create_account = (By.XPATH, '//*[@id="SubmitCreate"]/span')
         # to user registered

@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from pages.base_page import BasePage
 
-class PageBuy:
+
+class PageBuy(BasePage):
     def __init__(self, driver):
-        self.driver = driver
+        super().__init__(driver)
         self.quantity_wanted = (By.NAME, 'qty')
         self.button_plus = (By.XPATH, '//*[@id="quantity_wanted_p"]/a[2]/span/i')
         self.button_add_to_cart = (By.XPATH, '//*[@id="add_to_cart"]/button/span')
@@ -27,7 +29,8 @@ class PageBuy:
 
     def get_number_of_elements(self):
         #devuelvo el atributo value del elemento quantity wanted
-        get_number_elements = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(self.quantity_wanted))
+        get_number_elements = WebDriverWait(self.driver, 5).until(
+            EC.visibility_of_element_located(self.quantity_wanted))
         get_number = get_number_elements.get_attribute('value')
         return get_number
 
@@ -36,11 +39,13 @@ class PageBuy:
         add_to_cart.click()
 
     def get_text_successfully_add_product_text(self):
-        text_add_product = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.successfully_add_product_text))
+        text_add_product = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(self.successfully_add_product_text))
         text_add = text_add_product.text
         return text_add
 
     def push_button_proceed_to_checkout(self):
-        proceed_checkout = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.button_proceed_to_checkout))
+        proceed_checkout = WebDriverWait(self.driver, 5).until(
+            EC.element_to_be_clickable(self.button_proceed_to_checkout))
         proceed_checkout.click()
 

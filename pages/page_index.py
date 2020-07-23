@@ -1,18 +1,18 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from pages.base_page import BasePage
 
 
 # clase de la página index
-class PageIndex:
-    # constructor con elementos a usar
+class PageIndex(BasePage):
+    #Locators
     def __init__(self, driver):
-        # ejemplo de como usar la librería BY
+        super().__init__(driver)
         self.query_top = (By.ID, 'search_query_top')
         self.button_search = (By.NAME, 'submit_search')
         self.button_sign_in = (By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/div[1]/a')
         self.phone_numbre_of_banner = (By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/span/strong')
-        self.driver = driver
 
     def search(self, item):
         try:

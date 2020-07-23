@@ -8,6 +8,7 @@ from pages.page_buy import PageBuy
 from pages.page_cart_summary import PageCartSummary
 from pages.page_sign_in import PageLogin
 from user.user_static import StaticUserRegistered
+from pages.base_page import BasePage
 
 __pdoc__ = {}
 __pdoc__["TestsPagePurchases"] = False
@@ -18,8 +19,9 @@ class TestsPagePurchases(unittest.TestCase):
 
     def setUp(self):
         # instancio mi driver, en este caso chromedriver
-        self.driver = webdriver.Chrome('../drivers/chromedriver')
-        self.driver.get('http://automationpractice.com/index.php')
+        self.basePage = BasePage()
+        self.driver = webdriver.Chrome(self.basePage.driver)
+        self.driver.get(self.basePage.base_url)
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
         self.indexPage = PageIndex(self.driver)
