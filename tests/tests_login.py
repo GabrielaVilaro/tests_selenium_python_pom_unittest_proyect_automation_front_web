@@ -1,4 +1,4 @@
-'''Tests para verificar la página de login de automationpractice.com'''
+"""Tests para verificar la página de login de automationpractice.com"""
 
 import unittest
 from selenium import webdriver
@@ -17,11 +17,10 @@ __pdoc__["TestsPageLogin"] = False
 
 
 class TestsPageLogin(unittest.TestCase):
-    '''Método con las pre-condiciones'''
+    """Método con las pre-condiciones"""
 
     @classmethod
     def setUp(cls):
-        # instancio mi driver, en este caso chromedriver
         cls.basePage = BasePage()
         cls.driver = webdriver.Chrome(cls.basePage.driver)
         cls.driver.get(cls.basePage.base_url)
@@ -37,8 +36,8 @@ class TestsPageLogin(unittest.TestCase):
         cls.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
-        '''Este tests verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
-        se pase a la sección AUTHENTICATION'''
+        """Este tests verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente
+        se pase a la sección AUTHENTICATION"""
 
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.utilsFunctions.generate_email())
@@ -46,8 +45,8 @@ class TestsPageLogin(unittest.TestCase):
         self.assertEqual('AUTHENTICATION', self.createdAccount.return_title_of_create_authentication())
 
     def test_sign_in_complete_verify_name_of_user_and_title_banner_my_account(self):
-        '''Este tests realiza un registro completo y posteriormente valida que el nombre de usuario
-        coincida efectivamente con el creado y que se esté en la página MY ACCOUNT'''
+        """Este tests realiza un registro completo y posteriormente valida que el nombre de usuario
+        coincida efectivamente con el creado y que se esté en la página MY ACCOUNT"""
 
         self.indexPage.push_sign_in()
         self.login.send_mail_box(self.utilsFunctions.generate_email())

@@ -1,4 +1,4 @@
-'''Tests realizados para verificar la página de compra de automationpractice.com'''
+"""Tests realizados para verificar la página de compra de automationpractice.com"""
 
 import unittest
 from selenium import webdriver
@@ -15,7 +15,7 @@ __pdoc__["TestsPagePurchases"] = False
 
 
 class TestsPagePurchases(unittest.TestCase):
-    '''Método con las pre-condiciones'''
+    """Método con las pre-condiciones"""
 
     @classmethod
     def setUp(cls):
@@ -33,7 +33,7 @@ class TestsPagePurchases(unittest.TestCase):
         cls.userStatic = StaticUserRegistered()
 
     def test_product_successfully_added_to_cart_text(self):
-        '''Este tests valida que un producto sea agregado correctamente al carrito de compras'''
+        """Este tests valida que un producto sea agregado correctamente al carrito de compras"""
 
         self.indexPage.search('T-Shirt')
         self.resultPage.click_color()
@@ -42,7 +42,7 @@ class TestsPagePurchases(unittest.TestCase):
         self.assertTrue(text_successfully_add_product in 'Product successfully added to your shopping cart')
 
     def test_title_text_shopping_cart_summary(self):
-        '''Este tests verifica título y cantidad de productos agregados al carrito'''
+        """Este tests verifica título y cantidad de productos agregados al carrito"""
 
         self.indexPage.search('T-Shirt')
         self.resultPage.click_color()
@@ -52,7 +52,7 @@ class TestsPagePurchases(unittest.TestCase):
         self.assertEqual('SHOPPING-CART SUMMARY\nYour shopping cart contains: 1 Product', text_title_shopping_cart)
 
     def test_number_of_price_total_shopping_cart(self):
-        '''Este tests verifica que el precio del producto sea correcto'''
+        """Este tests verifica que el precio del producto sea correcto"""
 
         self.indexPage.search('T-Shirt')
         self.resultPage.click_color()
@@ -62,9 +62,9 @@ class TestsPagePurchases(unittest.TestCase):
         self.assertEqual('$19.25', price_total)
 
     def test_title_text_addresses(self):
-        '''Este tests primero ingresa con un usuario válido y después verifica que se pase
+        """Este tests primero ingresa con un usuario válido y después verifica que se pase
         efectivamente a la página ADDRESSES y envía un texto al campo If you would like to add a comment about your
-        order, please write it in the field below.'''
+        order, please write it in the field below."""
 
         self.indexPage.push_sign_in()
         self.login.send_mail_user_registered(self.userStatic.email_user_registered)
@@ -80,7 +80,7 @@ class TestsPagePurchases(unittest.TestCase):
         self.assertEqual('ADDRESSES', title_address)
 
     def test_page_of_shipping_delivery(self):
-        '''Este tests verifica que el título de la sección shipping y el precio de delivery sean correctos'''
+        """Este tests verifica que el título de la sección shipping y el precio de delivery sean correctos"""
 
         self.indexPage.push_sign_in()
         self.login.send_mail_user_registered(self.userStatic.email_user_registered)
@@ -99,8 +99,8 @@ class TestsPagePurchases(unittest.TestCase):
         self.assertEqual('$2.00', price_of_delivery)
 
     def test_page_of_payment_product_title_and_finally_price_total(self):
-        '''Este tests verifica que efectivamete se haya pasado a la página de pago y que el
-        precio total sea el correcto'''
+        """Este tests verifica que efectivamete se haya pasado a la página de pago y que el
+        precio total sea el correcto"""
 
         self.indexPage.push_sign_in()
         self.login.send_mail_user_registered(self.userStatic.email_user_registered)
