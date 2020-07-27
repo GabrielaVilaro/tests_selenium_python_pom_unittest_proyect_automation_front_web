@@ -18,8 +18,7 @@ class TestsPagePurchases(unittest.TestCase):
     """Método con las pre-condiciones"""
 
     @classmethod
-    def setUp(cls):
-        # instancio mi driver, en este caso chromedriver
+    def setUpClass(cls):
         cls.basePage = BasePage()
         cls.driver = webdriver.Chrome(cls.basePage.driver)
         cls.driver.get(cls.basePage.base_url)

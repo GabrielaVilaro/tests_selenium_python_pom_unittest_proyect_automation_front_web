@@ -20,7 +20,7 @@ class TestsPageLogin(unittest.TestCase):
     """Método con las pre-condiciones"""
 
     @classmethod
-    def setUp(cls):
+    def setUpClass(cls):
         cls.basePage = BasePage()
         cls.driver = webdriver.Chrome(cls.basePage.driver)
         cls.driver.get(cls.basePage.base_url)
