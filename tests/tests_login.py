@@ -19,21 +19,22 @@ __pdoc__["TestsPageLogin"] = False
 class TestsPageLogin(unittest.TestCase):
     '''Método con las pre-condiciones'''
 
-    def setUp(self):
+    @classmethod
+    def setUp(cls):
         # instancio mi driver, en este caso chromedriver
-        self.basePage = BasePage()
-        self.driver = webdriver.Chrome(self.basePage.driver)
-        self.driver.get(self.basePage.base_url)
-        self.driver.implicitly_wait(5)
-        self.driver.maximize_window()
-        self.login = PageLogin(self.driver)
-        self.indexPage = PageIndex(self.driver)
-        self.itemPage = ResultCases(self.driver)
-        self.buyPage = PageBuy(self.driver)
-        self.createdAccount = PageCreateAccount(self.driver)
-        self.myAccount = PageMyAccount(self.driver)
-        self.utilsFunctions = FunctionsUtils()
-        self.userStatic = StaticUserSigIn()
+        cls.basePage = BasePage()
+        cls.driver = webdriver.Chrome(cls.basePage.driver)
+        cls.driver.get(cls.basePage.base_url)
+        cls.driver.implicitly_wait(5)
+        cls.driver.maximize_window()
+        cls.login = PageLogin(cls.driver)
+        cls.indexPage = PageIndex(cls.driver)
+        cls.itemPage = ResultCases(cls.driver)
+        cls.buyPage = PageBuy(cls.driver)
+        cls.createdAccount = PageCreateAccount(cls.driver)
+        cls.myAccount = PageMyAccount(cls.driver)
+        cls.utilsFunctions = FunctionsUtils()
+        cls.userStatic = StaticUserSigIn()
 
     def test_title_of_page(self):
         '''Este tests verfica que después de ingresar el mail y presionar el botón crear cuenta, efectivamente

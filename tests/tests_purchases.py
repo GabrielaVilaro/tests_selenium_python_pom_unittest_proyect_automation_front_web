@@ -17,19 +17,20 @@ __pdoc__["TestsPagePurchases"] = False
 class TestsPagePurchases(unittest.TestCase):
     '''Método con las pre-condiciones'''
 
-    def setUp(self):
+    @classmethod
+    def setUp(cls):
         # instancio mi driver, en este caso chromedriver
-        self.basePage = BasePage()
-        self.driver = webdriver.Chrome(self.basePage.driver)
-        self.driver.get(self.basePage.base_url)
-        self.driver.implicitly_wait(5)
-        self.driver.maximize_window()
-        self.indexPage = PageIndex(self.driver)
-        self.resultPage = ResultCases(self.driver)
-        self.buyPage = PageBuy(self.driver)
-        self.cartSummary = PageCartSummary(self.driver)
-        self.login = PageLogin(self.driver)
-        self.userStatic = StaticUserRegistered()
+        cls.basePage = BasePage()
+        cls.driver = webdriver.Chrome(cls.basePage.driver)
+        cls.driver.get(cls.basePage.base_url)
+        cls.driver.implicitly_wait(5)
+        cls.driver.maximize_window()
+        cls.indexPage = PageIndex(cls.driver)
+        cls.resultPage = ResultCases(cls.driver)
+        cls.buyPage = PageBuy(cls.driver)
+        cls.cartSummary = PageCartSummary(cls.driver)
+        cls.login = PageLogin(cls.driver)
+        cls.userStatic = StaticUserRegistered()
 
     def test_product_successfully_added_to_cart_text(self):
         '''Este tests valida que un producto sea agregado correctamente al carrito de compras'''

@@ -14,16 +14,17 @@ __pdoc__["TestSearchCases"] = False
 class TestSearchCases(unittest.TestCase):
     '''Método con las pre-condiciones'''
 
-    def setUp(self):
+    @classmethod
+    def setUp(cls):
         # instancio mi driver, en este caso chromedriver
-        self.basePage = BasePage()
-        self.driver = webdriver.Chrome(self.basePage.driver)
-        self.driver.get(self.basePage.base_url)
-        self.driver.implicitly_wait(5)
-        self.driver.maximize_window()
-        self.indexPage = PageIndex(self.driver)
-        self.resultPage = ResultCases(self.driver)
-        self.buyPage = PageBuy(self.driver)
+        cls.basePage = BasePage()
+        cls.driver = webdriver.Chrome(cls.basePage.driver)
+        cls.driver.get(cls.basePage.base_url)
+        cls.driver.implicitly_wait(5)
+        cls.driver.maximize_window()
+        cls.indexPage = PageIndex(cls.driver)
+        cls.resultPage = ResultCases(cls.driver)
+        cls.buyPage = PageBuy(cls.driver)
 
     def test_search_no_element(self):
         ''' ##Test #1 Este tests busca un elemento inválido y verifica que la página
