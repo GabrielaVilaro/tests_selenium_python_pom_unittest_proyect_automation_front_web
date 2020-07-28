@@ -17,19 +17,18 @@ __pdoc__["TestsPagePurchases"] = False
 class TestsPagePurchases(unittest.TestCase):
     """Método con las pre-condiciones"""
 
-    @classmethod
-    def setUpClass(cls):
-        cls.basePage = BasePage()
-        cls.driver = webdriver.Chrome(cls.basePage.driver)
-        cls.driver.get(cls.basePage.base_url)
-        cls.driver.implicitly_wait(5)
-        cls.driver.maximize_window()
-        cls.indexPage = PageIndex(cls.driver)
-        cls.resultPage = ResultCases(cls.driver)
-        cls.buyPage = PageBuy(cls.driver)
-        cls.cartSummary = PageCartSummary(cls.driver)
-        cls.login = PageLogin(cls.driver)
-        cls.userStatic = StaticUserRegistered()
+    def setUp(self):
+        self.basePage = BasePage()
+        self.driver = webdriver.Chrome(self.basePage.driver)
+        self.driver.get(self.basePage.base_url)
+        self.driver.implicitly_wait(5)
+        self.driver.maximize_window()
+        self.indexPage = PageIndex(self.driver)
+        self.resultPage = ResultCases(self.driver)
+        self.buyPage = PageBuy(self.driver)
+        self.cartSummary = PageCartSummary(self.driver)
+        self.login = PageLogin(self.driver)
+        self.userStatic = StaticUserRegistered()
 
     def test_product_successfully_added_to_cart_text(self):
         """Este tests valida que un producto sea agregado correctamente al carrito de compras"""
@@ -58,7 +57,7 @@ class TestsPagePurchases(unittest.TestCase):
         self.buyPage.push_add_to_cart()
         self.buyPage.push_button_proceed_to_checkout()
         price_total = self.cartSummary.get_number_of_price_total()
-        self.assertEqual('$19.25', price_total)
+        self.assertEqual('$18.51', price_total)
 
     def test_title_text_addresses(self):
         """Este tests primero ingresa con un usuario válido y después verifica que se pase
