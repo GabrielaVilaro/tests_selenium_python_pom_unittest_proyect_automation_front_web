@@ -66,7 +66,7 @@ class TestSearchCases(unittest.TestCase):
         self.resultPage.product_list_by_index(3)
 
     def test_check_phone_number(self):
-        """##Test #6 Este test checkea el número de teléfono de la página"""
+        """##Test #6 Este tests checkea el número de teléfono de la página"""
 
         phone_number = self.indexPage.return_phone_number_of_banner()
         self.assertEqual(phone_number, '0123-456-789')

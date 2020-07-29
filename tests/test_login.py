@@ -1,5 +1,4 @@
 """Tests para verificar la página de login de automationpractice.com"""
-
 import unittest
 from selenium import webdriver
 from functions.functions import FunctionsUtils
@@ -16,7 +15,7 @@ __pdoc__ = {}
 __pdoc__["TestsPageLogin"] = False
 
 
-class TestsPageLogin(unittest.TestCase):
+class TestPageLogin(unittest.TestCase):
     """Método con las pre-condiciones"""
 
     def setUp(self):

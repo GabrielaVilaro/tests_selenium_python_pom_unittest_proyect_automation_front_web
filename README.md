@@ -20,6 +20,10 @@ https://docs.google.com/spreadsheets/d/1xJxVy7hZBSpHSzhdFZTcU998BdypeW7BxLj3vNby
   
 El proyecto incluye reporte en HTLM que se puede ver al finalizar la ejecución.
 
+Correr todos los tests juntos:
+
+     python -m unittest discover   
+
 Ejemplo de reporte del archivo tests_index_page.py
 
 

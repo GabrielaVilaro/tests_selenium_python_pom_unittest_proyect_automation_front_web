@@ -14,7 +14,7 @@ __pdoc__ = {}
 __pdoc__["TestsPagePurchases"] = False
 
 
-class TestsPagePurchases(unittest.TestCase):
+class TestPagePurchases(unittest.TestCase):
     """Método con las pre-condiciones"""
 
     def setUp(self):
