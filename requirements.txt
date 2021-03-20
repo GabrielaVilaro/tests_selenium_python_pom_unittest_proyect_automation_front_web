@@ -9,7 +9,7 @@ flake8==3.8.3
 html-testRunner==1.2.1
 hug==2.6.1
 jdcal==1.4.1
-Jinja2==2.11.2
+Jinja2==2.11.3
 jmespath==0.10.0
 keyring==21.2.1
 Mako==1.1.3
